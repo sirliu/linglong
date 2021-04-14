@@ -18,6 +18,21 @@
 
 
 
+#### 服务器上部署(地址不是127.0.0.1情况)
+
+```bash
+git clone https://github.com/sirliu/linglong
+
+# 将项目中所有文件中的 sirliu.top 替换成你服务器IP或者服务器域名
+
+# 重要！！！ 如果之前安装过，使用如下命令删除所有名字包含linglong的历史镜像
+docker rmi $(docker images | grep "linglong" | awk '{print $3}') 
+
+# cd到 linglong的目录下
+cd linglong/
+docker-compose up -d
+```
+
 ## 预览
 tip:如果图片加载不出来,[点我去gitee看图片](https://gitee.com/awake1t/linglong)
 
@@ -108,21 +123,6 @@ web访问 http://ip:8001
 
 
 
-#### 如果部署在服务器上(地址不是127.0.0.1情况)
-
-```bash
-git clone https://github.com/sirliu/linglong
-
-# 将项目中所有文件中的`sirliu.top`替换成你服务器IP或者服务器域名
-
-# 重要！！！ 如果之前安装过，使用如下命令删除所有名字包含linglong的历史镜像
-docker rmi $(docker images | grep "linglong" | awk '{print $3}') 
-
-
-# cd到 linglong的目录下
-cd linglong/
-docker-compose up -d
-```
 ![image](https://github.com/awake1t/linglong/blob/master/img/docker2.png)
 
 
