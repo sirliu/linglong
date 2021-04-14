@@ -23,7 +23,10 @@
 ```bash
 git clone https://github.com/sirliu/linglong
 
-# 将项目中所有文件中的 sirliu.top 替换成你服务器IP或者服务器域名
+# 将项目中以下文件中的 sirliu.top 替换成你服务器IP或者服务器域名
+# web\src\main.js
+# web\dist\js\app.4dccb236.js
+# web\dist\js\app.4dccb236.js.map
 
 # 重要！！！ 如果之前安装过，使用如下命令删除所有名字包含linglong的历史镜像
 docker rmi $(docker images | grep "linglong" | awk '{print $3}') 
