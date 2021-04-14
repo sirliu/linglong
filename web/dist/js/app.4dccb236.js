@@ -5871,7 +5871,7 @@
             return va()(e).format(t)
         }
         )),
-        G.a.defaults.baseURL = "http://sirliu.top:18000/api/v1/",
+        G.a.defaults.baseURL = "http://sirliu.ddns.net:18000/api/v1/",
         s["default"].prototype.$http = G.a,
         G.a.interceptors.request.use((function(e) {
             return e.headers.Authorization = window.sessionStorage.getItem("token"),
