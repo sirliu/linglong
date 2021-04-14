@@ -111,19 +111,16 @@ web访问 http://ip:8001
 #### 如果部署在服务器上(地址不是127.0.0.1情况)
 
 ```bash
-git clone https://github.com/awake1t/linglong
-cd linglong/web
+git clone https://github.com/sirliu/linglong
 
-# 把 YourServerIp 换成你的IP地址
-sed -i 's#http://127.0.0.1:18000#http://YourServerIp:18000#g' ./dist/js/app.4dccb236.js && sed -i 's#http://127.0.0.1:18000#http://YourServerIp:18000#g' ./dist/js/app.4dccb236.js.map
-
+# 将项目中所有文件中的`sirliu.top`替换成你服务器IP或者服务器域名
 
 # 重要！！！ 如果之前安装过，使用如下命令删除所有名字包含linglong的历史镜像
 docker rmi $(docker images | grep "linglong" | awk '{print $3}') 
 
 
-# 返回到 linglong的目录下
-cd ../
+# cd到 linglong的目录下
+cd linglong/
 docker-compose up -d
 ```
 ![image](https://github.com/awake1t/linglong/blob/master/img/docker2.png)
