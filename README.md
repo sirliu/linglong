@@ -19,6 +19,22 @@
 
 
 #### 服务器上部署(地址不是127.0.0.1情况)
+```bash
+git clone https://github.com/awake1t/linglong
+cd linglong/web
+
+# 把 YourServerIp 换成你的IP地址
+sed -i 's#http://127.0.0.1:18000#http://YourServerIp:18000#g' ./dist/js/app.4dccb236.js && sed -i 's#http://127.0.0.1:18000#http://YourServerIp:18000#g' ./dist/js/app.4dccb236.js.map
+
+
+# 重要！！！ 如果之前安装过，使用如下命令删除所有名字包含linglong的历史镜像
+docker rmi $(docker images | grep "linglong" | awk '{print $3}') 
+
+
+# 返回到 linglong的目录下
+cd ../
+docker-compose up -d
+```
 
 ```bash
 git clone https://github.com/sirliu/linglong
