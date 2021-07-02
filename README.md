@@ -19,6 +19,7 @@
 
 
 #### 服务器上部署(地址不是127.0.0.1情况)
+源仓库替换方法
 ```bash
 git clone https://github.com/awake1t/linglong
 cd linglong/web
